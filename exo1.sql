@@ -4,7 +4,7 @@ USE exo1;
 
 CREATE TABLE IF NOT EXISTS personne(
 personne_id INT AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(3),
+title VARCHAR(4),
 prenom VARCHAR(50),
 nom VARCHAR(50),
 telephone VARCHAR(10),
@@ -30,15 +30,15 @@ show tables;
 -- Partie 2 exo 1
 
 INSERT INTO personne (title,prenom,nom,telephone,email) VALUES 
-("M.","Nassim12","Sakhri","0123456789","sakhri@slhf.fr"),
-("M.","Nassim0","Sakhri","0123456789","sakhri@slhf.fr"),
-("M.","Nassim1","Sakhri","0123456789","sakhri@slhf.fr"),
-("M.","Nassim2","Sakhri","0123456789","sakhri@slhf.fr"),
-("M.","Nassim3","Sakhri","0123456789","sakhri@slhf.fr"),
-("M.","toto","Sakhri","0123456789","sakhri@slhf.fr"),
-("M.","titi","Dupont","0123456789","sakhri@slhf.fr"),
-("M.","tata","Dupont","0123456789","sakhri@slhf.fr"),
-("M.","tutu","Dupont","0123456789","sakhri@slhf.fr");
+("Mr","Nassim12","Sakhri","0123456789","sakhri@slhf.fr"),
+("Mr","Nassim0","Sakhri","0123456789","sakhri@slhf.fr"),
+("Mr","Nassim1","Sakhri","0123456789","sakhri@slhf.fr"),
+("Mr","Nassim2","Sakhri","0123456789","sakhri@slhf.fr"),
+("Mr","Nassim3","Sakhri","0123456789","sakhri@slhf.fr"),
+("Mlle","toto","Sakhri","0123456789","sakhri@slhf.fr"),
+("Mme","titi","Dupont","0123456789","sakhri@slhf.fr"),
+("Mme","tata","Dupont","0123456789","sakhri@slhf.fr"),
+("Mme","tutu","Dupont","0123456789","sakhri@test.fr");
 
 INSERT INTO adresse (rue,ville,codePostal,personne_id) VALUES ("rue stephenson","Roubaix",59100,1),
 ("rue du chomage","Roubaix",59100,3),
@@ -56,3 +56,9 @@ DELETE FROM personne WHERE prenom = "toto";
 UPDATE personne
 SET telephone = "0707070707"
 WHERE nom = "Dupont";
+
+
+
+SELECT * FROM personne ORDER BY nom DESC;
+SELECT * FROM personne ORDER BY title ASC;
+SELECT * FROM personne WHERE email = "sakhri@test.fr";
